@@ -36,6 +36,7 @@ npm run build
 
 ### Development Setup
 
+
 Spin up the application for development, all strings attached:
 
 ```sh
@@ -53,3 +54,4 @@ Copyright 2025 FINOS
 MIT
 
 Uses [bpmn-js](https://github.com/bpmn-io/bpmn-js), [dmn-js](https://github.com/bpmn-io/dmn-js), [cmmn-js](https://github.com/bpmn-io/cmmn-js), and [form-js](https://github.com/bpmn-io/form-js) licensed under the [bpmn.io license](http://bpmn.io/license).
+

@@ -69,8 +69,13 @@ module.exports = function(karma) {
       ]
     },
 
-    browsers: browsers,
-
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     browserNoActivityTimeout: 30000,
 
     singleRun: true,

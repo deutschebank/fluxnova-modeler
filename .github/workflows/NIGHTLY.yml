@@ -1,7 +1,8 @@
 name: NIGHTLY
 on:
-  schedule:
-    - cron: '0 18 * * *'
+  workflow_dispatch:
+#  schedule:
+#    - cron: '0 18 * * *'
 jobs:
   build_nightly:
     name: Build nightly

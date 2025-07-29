@@ -1,8 +1,9 @@
 name: RELEASE
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
+#  push:
+#    tags:
+#      - 'v*'
 jobs:
   pre_release:
     name: Prepare release

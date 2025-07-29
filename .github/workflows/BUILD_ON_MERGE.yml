@@ -1,61 +1,55 @@
-name: BUILD_ON_DEMAND
+name: BUILD_ON_MERGE
+permissions:
+  contents: read
 on:
+  pull_request:
+    types: [closed]
+    branches: [develop]
   workflow_dispatch:
-    inputs:
-      buildName:
-        description: 'Name of the build'
-        required: true
-      linkedDependencies:
-        description: 'Dependencies to link from GitHub (format: bpmn-js#develop,dmn-js#9.0.0)'
-        default: ''
+
 jobs:
   build:
+    if: github.event.pull_request.merged == true
     strategy:
       matrix:
-        os: [ ubuntu-latest, macos-latest, windows-2022  ]
+        os: [ ubuntu-latest, macos-latest, windows-2022 ]
     runs-on: ${{ matrix.os }}
     env:
       ON_DEMAND: true
+      ELECTRON_GET_USE_PROXY: true
+      NODE_TLS_REJECT_UNAUTHORIZED: 0
 
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: 20
         cache: 'npm'
 
-    - name: Install dependencies
+    - name: Install npm dependencies
       run: npm ci
 
-    - name: Link dependencies
-      env:
-        LINKED_DEPENDENCIES: "${{ github.event.inputs.linkedDependencies }}"
-      run: npm run link-dependencies
+    - name: Test Modeler
+      run: |
+        npm install puppeteer
+        npm run test
 
     - name: Build distro (Linux)
       if: ${{ runner.OS == 'Linux' }}
-      env:
-        ELECTRON_GET_USE_PROXY: true
-      run: npm run build -- --linux
+      run: npm run build -- --linux -
 
     - name: Build distro (MacOS)
       if: ${{ runner.os == 'macOS' }}
-      env:
-        ELECTRON_GET_USE_PROXY: true
       run: npm run build -- --mac
-      
+
     - name: Build distro (Windows)
       if: ${{ runner.os == 'Windows' }}
-      env:
-        ELECTRON_GET_USE_PROXY: true
-      run: npm run build -- --win
+      run: npm run build -- --win 
 
     - name: Upload build artifacts ${{ matrix.os }}
       uses: actions/upload-artifact@v4
       with:
         name: build-artifacts-${{ matrix.os }}
         path: dist
-
