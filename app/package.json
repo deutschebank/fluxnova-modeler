@@ -6,8 +6,8 @@
   "main": "prod.js",
   "author": {
     "name": "FINOS",
-    "email": "info@camunda.com",
-    "url": "https://camunda.com"
+    "email": "flowave@lists.finos.org",
+    "url": "https://flowave.finos.org"
   },
   "license": "MIT",
   "dependencies": {
@@ -21,10 +21,10 @@
     "mri": "^1.1.6",
     "parents": "^1.0.1"
   },
-  "homepage": "https://github.com/camunda/camunda-modeler",
+  "homepage": "https://github.com/finos/flowave-modeler",
   "repository": {
     "type": "git",
-    "url": "https://github.com/camunda/camunda-modeler"
+    "url": "https://github.com/finos/flowave-modeler"
   },
   "optionalDependencies": {
     "vscode-windows-ca-certs": "^0.3.0"
