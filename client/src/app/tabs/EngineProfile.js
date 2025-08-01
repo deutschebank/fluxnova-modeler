@@ -33,8 +33,6 @@ const HELP_LINKS = {
   [ ENGINES.CLOUD ]: 'https://docs.camunda.io/?utm_source=modeler&utm_medium=referral'
 };
 
-const DONWLOAD_PAGE = 'https://camunda.com/download/modeler/';
-
 export function EngineProfile(props) {
   const {
     filterVersions = () => true,
@@ -259,12 +257,6 @@ function UnknownVersionHint(props) {
       <p>
         This diagram uses an unsupported { displayLabel } version.
         As a result, some features might not work as expected.
-      </p>
-
-      <p>
-        To use the latest features, please <a href={ DONWLOAD_PAGE }>
-          check for an updated modeler version
-        </a>.
       </p>
     </div>
   );

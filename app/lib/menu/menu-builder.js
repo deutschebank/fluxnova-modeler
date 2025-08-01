@@ -613,10 +613,6 @@ class MenuBuilder {
           label: 'Privacy Preferences',
           click: () => app.emit('menu:action', 'emit-event', { type: 'show-privacy-preferences' })
         },
-        {
-          label: 'Check for Updates',
-          click: () => app.emit('menu:action', 'emit-event', { type: 'updateChecks.execute' })
-        },
       ] : [],
       getSeparatorTemplate()
     ];

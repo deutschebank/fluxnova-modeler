@@ -61,27 +61,6 @@ export default class EmptyTab extends PureComponent {
     return tabs;
   }
 
-  renderCloudColumn = () => {
-
-    const createButtons = this.getCreateButtons('Flowave');
-
-    return (
-      <div id="welcome-page-cloud" className="welcome-card relative">
-        <div className="engine-info">
-          <div className="engine-info-heading">
-            <CloudIcon className="engine-icon cloud-icon" />
-            <h3>Camunda 8</h3>
-          </div>
-          <a href="https://camunda.com/products/cloud/?utm_source=modeler&utm_medium=referral">See version details</a>
-        </div>
-
-        <p>Create a new file</p>
-
-        {createButtons}
-      </div>
-    );
-  };
-
   renderPlatformColumn = () => {
 
     const createButtons = this.getCreateButtons('Flowave');
@@ -91,7 +70,7 @@ export default class EmptyTab extends PureComponent {
         <div className="engine-info">
           <div className="engine-info-heading">
             <PlatformIcon className="engine-icon platform-icon" />
-            <h3>Camunda 7</h3>
+            <h3>Flowave</h3>
           </div>
           <a href="https://camunda.com/products/camunda-platform/?utm_source=modeler&utm_medium=referral">See version details</a>
         </div>
@@ -110,7 +89,7 @@ export default class EmptyTab extends PureComponent {
         <div className="learn-more">
           <h3>Learn more</h3>
           <div className="article relative">
-            <p>Introduction to Camunda 8</p>
+            <p>Introduction to Flowave</p>
             <a href="https://camunda.com/blog/2022/04/camunda-platform-8-orchestrate-all-the-things?utm_source=modeler&utm_medium=referral">Read blog post</a>
           </div>
           <div className="article relative">
@@ -118,12 +97,12 @@ export default class EmptyTab extends PureComponent {
             <a href="https://docs.camunda.io/docs/guides/migrating-from-Camunda-Platform/?utm_source=modeler&utm_medium=referral">Camunda Docs</a>
           </div>
           <div className="article">
-            <p>About Modeler 5</p>
+            <p>About Modeler 1</p>
             <a href="#" onClick={ () => this.props.onAction('emit-event', { type: 'versionInfo.open' }) }>Open &quot;What&apos;s new&quot;</a>
           </div>
           <div className="article">
             <p>Model your first diagram</p>
-            <a href="https://docs.camunda.io/docs/components/modeler/desktop-modeler/model-your-first-diagram/?utm_source=modeler&utm_medium=referral">Camunda Modeler Docs</a>
+            <a href="https://docs.flowave.finos.org/">Flowave Docs</a>
           </div>
         </div>
       </div>
@@ -136,7 +115,6 @@ export default class EmptyTab extends PureComponent {
       <Tab className={ css.EmptyTab }>
         {!Flags.get(DISABLE_ZEEBE) && !Flags.get(DISABLE_PLATFORM) && <h2 className="welcome-header">Choose the right version for your project:</h2>}
         <div className="welcome-cards">
-          {!Flags.get(DISABLE_ZEEBE) && <>{this.renderCloudColumn()}</>}
           {!Flags.get(DISABLE_PLATFORM) && <>{this.renderPlatformColumn()}</>}
           {this.renderLearnMoreColumn()}
         </div>

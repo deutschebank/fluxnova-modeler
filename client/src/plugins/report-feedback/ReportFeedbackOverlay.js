@@ -16,7 +16,7 @@ import { ReportFeedbackSystemInfoSection } from './ReportFeedbackSystemInfoSecti
 
 import * as css from './ReportFeedbackOverlay.less';
 
-const REPORT_ISSUE_LINK = 'https://github.com/camunda/camunda-modeler/issues/new/choose';
+const REPORT_ISSUE_LINK = 'https://github.com/finos/flowave-modeler/issues/new/choose';
 const USER_FORUM_LINK = 'https://forum.camunda.io/tag/modeler?utm_source=modeler&utm_medium=referral';
 
 const OFFSET = { right: 0 };

@@ -24,8 +24,7 @@ export const TITLE = 'Privacy Preferences';
 
 export const DEFAULT_VALUES = {
   ENABLE_CRASH_REPORTS: false,
-  ENABLE_USAGE_STATISTICS: false,
-  ENABLE_UPDATE_CHECKS: false
+  ENABLE_USAGE_STATISTICS: false
 };
 
 export const PREFERENCES_LIST = [
@@ -38,10 +37,5 @@ export const PREFERENCES_LIST = [
     title: 'Enable Usage Statistics',
     explanation: 'Allow Camunda Modeler to send pseudonymised usage statistics.',
     key: 'ENABLE_USAGE_STATISTICS'
-  },
-  {
-    title: 'Enable Update Checks',
-    explanation: 'Allow Camunda Modeler to periodically check for new updates.',
-    key: 'ENABLE_UPDATE_CHECKS'
   }
 ];

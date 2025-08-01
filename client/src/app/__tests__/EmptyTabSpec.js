@@ -38,11 +38,8 @@ describe('<EmptyTab>', function() {
       buttons.forEach(wrapper => wrapper.simulate('click'));
 
       // then
-      expect(onAction).to.have.callCount(6);
+      expect(onAction).to.have.callCount(3);
       expect(onAction.args).to.eql([
-        [ 'create-bpmn-diagram', undefined ],
-        [ 'create-dmn-diagram', undefined ],
-        [ 'create-form', undefined ],
         [ 'create-bpmn-diagram', undefined ],
         [ 'create-dmn-diagram', undefined ],
         [ 'create-form', undefined ]
@@ -85,7 +82,7 @@ describe('<EmptyTab>', function() {
         tree.findWhere(
           wrapper => wrapper.text().startsWith('DMN diagram')
         )
-      ).to.have.length(2);
+      ).to.have.length(1);
     });
   });
 
@@ -125,7 +122,7 @@ describe('<EmptyTab>', function() {
         tree.findWhere(
           wrapper => wrapper.text().startsWith('Form')
         )
-      ).to.have.length(2);
+      ).to.have.length(1);
     });
 
   });
@@ -144,10 +141,10 @@ describe('<EmptyTab>', function() {
 
       // then
       expect(tree.find('.welcome-header')).to.have.length(1);
-      expect(tree.find('.welcome-card')).to.have.length(3);
+      expect(tree.find('.welcome-card')).to.have.length(2);
       expect(
         tree.findWhere(
-          wrapper => wrapper.text().startsWith('Camunda 7')
+          wrapper => wrapper.text().startsWith('Flowave')
         ).exists()
       ).to.be.true;
     });
@@ -165,57 +162,7 @@ describe('<EmptyTab>', function() {
 
       // then
       expect(tree.find('.welcome-header')).to.have.length(0);
-      expect(tree.find('.welcome-card')).to.have.length(2);
-      expect(
-        tree.findWhere(
-          wrapper => wrapper.text().startsWith('Camunda 7')
-        ).exists()
-      ).to.be.false;
-    });
-
-  });
-
-
-  describe('enable zeebe', function() {
-
-    afterEach(sinon.restore);
-
-    it('should display zeebe without flag', function() {
-
-      // when
-      const {
-        tree
-      } = createEmptyTab();
-
-      // then
-      expect(tree.find('.welcome-header')).to.have.length(1);
-      expect(tree.find('.welcome-card')).to.have.length(3);
-      expect(
-        tree.findWhere(
-          wrapper => wrapper.text().startsWith('Camunda 8')
-        ).exists()
-      ).to.be.true;
-    });
-
-
-    it('should NOT display zeebe with flag', function() {
-
-      // given
-      sinon.stub(Flags, 'get').withArgs(DISABLE_ZEEBE).returns(true);
-
-      // given
-      const {
-        tree
-      } = createEmptyTab();
-
-      // then
-      expect(tree.find('.welcome-header')).to.have.length(0);
-      expect(tree.find('.welcome-card')).to.have.length(2);
-      expect(
-        tree.findWhere(
-          wrapper => wrapper.text().startsWith('Camunda 8')
-        ).exists()
-      ).to.be.false;
+      expect(tree.find('.welcome-card')).to.have.length(1);
     });
 
   });
