@@ -1,19 +1,21 @@
-name: TEST_ON_DEMAND
+name: test
 permissions:
   contents: read
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
   pull_request:
-    types: [opened]
+
 jobs:
   build:
     strategy:
       matrix:
-        os: [ ubuntu-latest  ]
+        os: [ ubuntu-latest ]
     runs-on: ${{ matrix.os }}
     env:
       NODE_TLS_REJECT_UNAUTHORIZED: 0
-      ON_DEMAND: true
     steps:
     - name: Checkout
       uses: actions/checkout@v4
