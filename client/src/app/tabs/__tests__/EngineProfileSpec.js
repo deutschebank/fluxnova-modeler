@@ -448,7 +448,7 @@ function expectCloudHelp(wrapper) {
 
 // todo: Uncomment once documentation available (https://github.com/finos/flowave-modeler/issues/8)
 // function expectPlatformHelp(wrapper) {
-//   expectHelpText(wrapper, 'https://docs.camunda.org/manual/latest/');
+//   expectHelpText(wrapper, 'https://docs.flowave.finos.org/manual/latest/');
 // }
 
 function selectVersion(wrapper, version) {
