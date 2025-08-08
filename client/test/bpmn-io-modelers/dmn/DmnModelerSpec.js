@@ -483,16 +483,23 @@ async function createModeler(options = {}) {
     });
   });
 
-  const modelerImport = new Promise(resolve => {
+  const modelerImport = new Promise(((resolve, reject) => {
     modeler.once('views.changed', VERY_LOW_PRIORITY, resolve);
 
-    modeler.importXML(diagramXML, (err, warnings) => {
+    modeler.importXML(diagramXML).then(({ warnings }) => {
 
-      // assume
-      expect(err).not.to.exist;
-      expect(warnings).to.be.empty;
+      try {
+
+        // assume
+        expect(warnings).to.be.empty;
+        resolve();
+      } catch (err) {
+        reject(err);
+      }
+    }).catch(err => {
+      expect.fail(`importXML failed: ${err.message}`);
     });
-  });
+  }));
 
   return Promise.all([ overviewImport, modelerImport ]).then(() => modeler);
 }
