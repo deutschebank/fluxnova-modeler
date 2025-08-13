@@ -14,9 +14,9 @@ import { Overlay, Section } from '../../shared/ui';
 
 import { ReleaseInfo } from './ReleaseInfo';
 
-const RELEASE_NOTES_LINK = 'https://camunda.com/blog/category/releases/&utm_source=modeler&utm_medium=referral';
+const RELEASE_NOTES_LINK = 'https://flowave.finos.org/blog/category/releases/&utm_source=modeler&utm_medium=referral';
 const DOCS_LINK = 'https://docs.camunda.io/docs/components/modeler/desktop-modeler/?utm_source=modeler&utm_medium=referral';
-const CHANGELOG_LINK = 'https://github.com/camunda/camunda-modeler/blob/main/CHANGELOG.md';
+const CHANGELOG_LINK = 'https://github.com/finos/flowave-modeler/blob/main/CHANGELOG.md';
 
 const OFFSET = { right: 0 };
 
