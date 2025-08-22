@@ -123,10 +123,12 @@ describe('<FormEditor>', function() {
 
     // when
     const exportedSchema = instance.getXML();
-
+    // need to strip out carriage return characters for windows runner
+    const strippedExportedSchema = exportedSchema.replace(/[\r]/g, '');
+    const strippedSchema = schema.replace(/[\r]/g, '');
     // then
     expect(exportedSchema).to.exist;
-    expect(exportedSchema).to.eql(schema);
+    expect(strippedExportedSchema).to.eql(strippedSchema);
   });
 
 
@@ -546,9 +548,11 @@ describe('<FormEditor>', function() {
 
       // given
       const { instance } = await renderEditor(schema);
-
+      // need to strip out carriage return characters for windows runner
+      const strippedInstanceJson = instance.getCached().lastSchema.replace(/[\r]/g, '');
+      const strippedSchema = schema.replace(/[\r]/g, '');
       // assume
-      expect(instance.getCached().lastSchema).to.equal(schema);
+      expect(strippedInstanceJson).to.equal(strippedSchema);
 
       // when
       await instance.importSchema('{ "importError": true }');
