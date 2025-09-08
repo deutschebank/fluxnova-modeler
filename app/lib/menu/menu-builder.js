@@ -588,11 +588,7 @@ class MenuBuilder {
     const topPart = [
       {
         label: 'Documentation',
-        click: () => browserOpen('https://docs.camunda.io/docs/components/modeler/desktop-modeler/')
-      },
-      {
-        label: 'User Forum',
-        click: () => browserOpen('https://forum.camunda.io/c/bpmn-modeling/')
+        click: () => browserOpen('https://docs.flowave.finos.org/modeler/')
       },
       {
         label: 'Keyboard Shortcuts',
@@ -637,11 +633,6 @@ class MenuBuilder {
     }, []);
 
     const bottomPart = [
-      {
-        label: 'FEEL Reference',
-        click: () => browserOpen('https://docs.camunda.io/docs/components/modeler/feel/what-is-feel/')
-      },
-      getSeparatorTemplate(),
       {
         label: 'Version ' + app.version,
         enabled: false

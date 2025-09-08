@@ -63,25 +63,18 @@ import { getDefaultVersion } from './tabs/EngineProfile';
 const BPMN_HELP_MENU = [
   {
     label: 'BPMN 2.0 Tutorial',
-    action: 'https://camunda.org/bpmn/tutorial/'
+    action: 'https://flowave.finos.org/bpmn/'
   },
   {
     label: 'BPMN Modeling Reference',
-    action: 'https://camunda.org/bpmn/reference/'
-  }
-];
-
-const C7_HELP_MENU = [
-  {
-    label: 'Camunda 8 Migration Guide',
-    action: 'https://docs.camunda.io/docs/guides/migrating-from-camunda-7/?utm_source=modeler&utm_medium=referral'
+    action: 'https://flowave.finos.org/bpmn/reference/'
   }
 ];
 
 const DMN_HELP_MENU = [
   {
     label: 'DMN Tutorial',
-    action: 'https://camunda.org/dmn/tutorial/'
+    action: 'https://flowave.finos.org/dmn/'
   }
 ];
 
@@ -166,7 +159,7 @@ export default class TabsProvider {
           return `diagram_${suffix}.bpmn`;
         },
         getHelpMenu() {
-          return BPMN_HELP_MENU.concat(C7_HELP_MENU);
+          return BPMN_HELP_MENU;
         },
         getNewFileMenu() {
           return [ {
