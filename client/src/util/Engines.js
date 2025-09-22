@@ -11,7 +11,7 @@
 export const ENGINES = {
   PLATFORM: 'Camunda Platform',
   CLOUD: 'Camunda Cloud',
-  FLOWAVE: 'Flowave Platform'
+  FLUXNOVA: 'Fluxnova Platform'
 };
 
 export const ENGINE_PROFILES = [
@@ -26,7 +26,7 @@ export const ENGINE_PROFILES = [
     latestStable: '8.6.0'
   },
   {
-    executionPlatform: ENGINES.FLOWAVE,
+    executionPlatform: ENGINES.FLUXNOVA,
     executionPlatformVersions: [ '0.0.1' ],
     latestStable: '0.0.1'
   }
@@ -34,7 +34,7 @@ export const ENGINE_PROFILES = [
 
 export const ENGINE_LABELS = {
   [ ENGINES.PLATFORM ]: 'Camunda 7',
-  [ ENGINES.FLOWAVE ]: 'Flowave',
+  [ ENGINES.FLUXNOVA ]: 'Fluxnova',
   [ ENGINES.CLOUD ]: 'Camunda 8'
 };
 

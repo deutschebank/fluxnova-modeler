@@ -1,8 +1,8 @@
 {
-  "name": "flowave-modeler-builder",
+  "name": "fluxnova-modeler-builder",
   "version": "0.0.0",
   "private": true,
-  "description": "Flowave Modeler for BPMN, DMN and CMMN, based on bpmn.io",
+  "description": "Fluxnova Modeler for BPMN, DMN and CMMN, based on bpmn.io",
   "scripts": {
     "app:auto-test": "npm run app:test -- --watch",
     "app:dev": "electron ./dev.js --force-update-checks resources/diagram/simple.bpmn",
@@ -34,16 +34,16 @@
     "start": "run-s \"dev -- {@}\" --",
     "link-dependencies": "node tasks/link-dependencies.js"
   },
-  "author": "FINOS <http://flowave.finos.org>",
+  "author": "FINOS <http://fluxnova.finos.org>",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/finos/flowave-modeler",
+  "homepage": "https://github.com/finos/fluxnova-modeler",
   "workspaces": [
     "app",
     "client"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/finos/flowave-modeler"
+    "url": "https://github.com/finos/fluxnova-modeler"
   },
   "devDependencies": {
     "@electron/notarize": "^2.5.0",

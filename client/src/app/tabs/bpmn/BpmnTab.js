@@ -18,7 +18,7 @@ const BpmnTab = createTab('BpmnTab', [
   {
     type: 'bpmn',
     editor: BpmnEditor,
-    defaultName: 'Diagram (Flowave Platform)'
+    defaultName: 'Diagram (Fluxnova Platform)'
   },
   {
     type: 'xml',

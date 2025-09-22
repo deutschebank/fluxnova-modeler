@@ -3,73 +3,73 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes]
 
 [HKEY_CURRENT_USER\Software\Classes\.bpmn]
-@="FlowaveModeler.BPMN"
+@="FluxnovaModeler.BPMN"
 
 [HKEY_CURRENT_USER\Software\Classes\.cmmn]
-@="FlowaveModeler.CMMN"
+@="FluxnovaModeler.CMMN"
 
 [HKEY_CURRENT_USER\Software\Classes\.dmn]
-@="FlowaveModeler.DMN"
+@="FluxnovaModeler.DMN"
 
 [HKEY_CURRENT_USER\Software\Classes\.form]
-@="FlowaveModeler.FORM"
+@="FluxnovaModeler.FORM"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.BPMN]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN]
 @="BPMN file"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.BPMN\DefaultIcon]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN\DefaultIcon]
 @="__CWD__,0"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.BPMN\shell]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN\shell]
 @="open"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.BPMN\shell\open]
-@="Open with Flowave Modeler"
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN\shell\open]
+@="Open with Fluxnova Modeler"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.BPMN\shell\open\command]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN\shell\open\command]
 @="__CWD__ \"%1\""
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.CMMN]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN]
 @="CMMN file"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.CMMN\DefaultIcon]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN\DefaultIcon]
 @="__CWD__,0"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.CMMN\shell]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN\shell]
 @="open"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.CMMN\shell\open]
-@="Open with Flowave Modeler"
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN\shell\open]
+@="Open with Fluxnova Modeler"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.CMMN\shell\open\command]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN\shell\open\command]
 @="__CWD__ \"%1\""
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.DMN]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN]
 @="DMN file"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.DMN\DefaultIcon]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN\DefaultIcon]
 @="__CWD__,0"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.DMN\shell]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN\shell]
 @="open"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.DMN\shell\open]
-@="Open with Flowave Modeler"
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN\shell\open]
+@="Open with Fluxnova Modeler"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.DMN\shell\open\command]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN\shell\open\command]
 @="__CWD__ \"%1\""
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.FORM]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM]
 @="FORM file"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.FORM\DefaultIcon]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM\DefaultIcon]
 @="__CWD__,0"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.FORM\shell]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM\shell]
 @="open"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.FORM\shell\open]
-@="Open with Flowave Modeler"
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM\shell\open]
+@="Open with Fluxnova Modeler"
 
-[HKEY_CURRENT_USER\Software\Classes\FlowaveModeler.FORM\shell\open\command]
+[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM\shell\open\command]
 @="__CWD__ \"%1\""

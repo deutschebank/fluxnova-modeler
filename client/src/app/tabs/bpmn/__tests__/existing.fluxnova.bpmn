@@ -2,8 +2,8 @@
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
                   xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
                   xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_0lqbcnk"
-                  targetNamespace="http://bpmn.io/schema/bpmn" xmlns:flowave="http://flowave.finos.org/schema/1.0/bpmn"
-                  xmlns:modeler="http://flowave.finos.org/schema/modeler/1.0" modeler:executionPlatform="Flowave Platform"
+                  targetNamespace="http://bpmn.io/schema/bpmn" xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn"
+                  xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0" modeler:executionPlatform="Fluxnova Platform"
                   modeler:executionPlatformVersion="1.0.0">
   <bpmn:process id="Process_0n57cbs" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1"/>

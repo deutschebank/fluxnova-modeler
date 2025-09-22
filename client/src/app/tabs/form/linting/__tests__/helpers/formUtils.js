@@ -29,6 +29,6 @@ export const removeFormComponent = function(form, key) {
 };
 
 export const updateTestFormVersion = function(form, version) {
-  formJSVersions['Flowave Platform']['test_ver'] = version;
+  formJSVersions['Fluxnova Platform']['test_ver'] = version;
   return updateFormData(form, 'executionPlatformVersion', 'test_ver');
 };

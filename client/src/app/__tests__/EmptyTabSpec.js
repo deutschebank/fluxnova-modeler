@@ -144,7 +144,7 @@ describe('<EmptyTab>', function() {
       expect(tree.find('.welcome-card')).to.have.length(2);
       expect(
         tree.findWhere(
-          wrapper => wrapper.text().startsWith('Flowave')
+          wrapper => wrapper.text().startsWith('Fluxnova')
         ).exists()
       ).to.be.true;
     });

@@ -14,11 +14,11 @@ import { UAParser } from 'ua-parser-js';
 
 
 const TAB_TYPE_MAPPING = {
-  'bpmn': 'BPMN - Flowave',
+  'bpmn': 'BPMN - Fluxnova',
   'cloud-bpmn': 'BPMN - Camunda 8',
-  'dmn': 'DMN - Flowave',
+  'dmn': 'DMN - Fluxnova',
   'cloud-dmn': 'DMN - Camunda 8',
-  'form': 'Form - Flowave',
+  'form': 'Form - Fluxnova',
   'cloud-form': 'Form - Camunda 8'
 };
 
@@ -46,7 +46,7 @@ export class ClipboardCopySystemInfo {
       _appendVersion
     } = this;
 
-    let systemInfoText = '## Flowave Modeler system information';
+    let systemInfoText = '## Fluxnova Modeler system information';
 
     if (config.version) {
       systemInfoText = appendVersion(systemInfoText, this._getVersion());

@@ -1,10 +1,10 @@
 {
 	"type": "default",
 	"components": [],
-	"executionPlatform": "Flowave Platform",
+	"executionPlatform": "Fluxnova Platform",
 	"executionPlatformVersion": "1.0.0",
 	"exporter": {
-		"name": "Flowave Modeler",
+		"name": "Fluxnova Modeler",
 		"version": "5.33.0-dev"
 	}
 }

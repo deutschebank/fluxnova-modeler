@@ -8,7 +8,7 @@ describe('tabs/form/linting/util - formVersion', function() {
 
       // given
       const schema = {
-        executionPlatform: 'Flowave Platform',
+        executionPlatform: 'Fluxnova Platform',
         executionPlatformVersion: '1.0',
       };
 
@@ -24,7 +24,7 @@ describe('tabs/form/linting/util - formVersion', function() {
 
       // given
       const schema = {
-        executionPlatform: 'Not Flowave Platform',
+        executionPlatform: 'Not Fluxnova Platform',
         executionPlatformVersion: '2.0',
       };
 

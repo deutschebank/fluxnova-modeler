@@ -8,7 +8,7 @@ export const execute = (node, context) => {
   } = context;
 
   if (node.type === 'button' && node?.action !== 'reset') {
-    const errorMessage = 'Submit buttons will be hidden in favor of built-in ones in the Flowave Tasklist.';
+    const errorMessage = 'Submit buttons will be hidden in favor of built-in ones in the Fluxnova Tasklist.';
     reporter.report(formatFormFieldReport(node, errorMessage, category));
   }
 

@@ -406,7 +406,7 @@ describe('DmnModeler', function() {
       // when
       const executionPlatformHelper = modeler.getActiveViewer().get('executionPlatform');
       executionPlatformHelper.setExecutionPlatform({
-        name: 'Flowave Platform',
+        name: 'Fluxnova Platform',
         version: '1.0.0'
       });
 
@@ -414,10 +414,10 @@ describe('DmnModeler', function() {
       const { xml } = await modeler.saveXML();
 
       expect(executionPlatformHelper.getExecutionPlatform()).to.eql({
-        name: 'Flowave Platform',
+        name: 'Fluxnova Platform',
         version: '1.0.0'
       });
-      expect(xml).to.contain('xmlns:modeler="http://flowave.finos.org/schema/modeler/1.0"');
+      expect(xml).to.contain('xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0"');
     });
   });
 

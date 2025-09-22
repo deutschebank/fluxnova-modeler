@@ -52,7 +52,7 @@ const { spy } = sinon;
 
 describe('<FormEditor>', function() {
 
-  const latestStable = getLatestStable(ENGINES.FLOWAVE);
+  const latestStable = getLatestStable(ENGINES.FLUXNOVA);
 
   it('should render', async function() {
     const { instance } = await renderEditor(schema);
@@ -491,7 +491,7 @@ describe('<FormEditor>', function() {
       });
 
       // when
-      await renderEditor('{ "executionPlatform":"Flowave Platform", "importError": true }', {
+      await renderEditor('{ "executionPlatform":"Fluxnova Platform", "importError": true }', {
         onImport: onImportSpy
       });
 
@@ -658,25 +658,25 @@ describe('<FormEditor>', function() {
 
 
     it('should show engine profile (no engine profile)', expectEngineProfile(noEngineProfile, {
-      executionPlatform: 'Flowave Platform',
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: latestStable
     }));
 
 
-    it('should show engine profile (Flowave 1.0.0)', expectEngineProfile(engineProfileSchema, {
-      executionPlatform: 'Flowave Platform',
+    it('should show engine profile (Fluxnova 1.0.0)', expectEngineProfile(engineProfileSchema, {
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Flowave 1.0)', expectEngineProfile(missingPatchEngineProfile, {
-      executionPlatform: 'Flowave Platform',
+    it('should show engine profile (Fluxnova 1.0)', expectEngineProfile(missingPatchEngineProfile, {
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Flowave 1.0.1)', expectEngineProfile(patchEngineProfile, {
-      executionPlatform: 'Flowave Platform',
+    it('should show engine profile (Fluxnova 1.0.1)', expectEngineProfile(patchEngineProfile, {
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: '1.0.1'
     }));
 
@@ -692,27 +692,27 @@ describe('<FormEditor>', function() {
       expect(wrapper.find('EngineProfile').exists()).to.be.true;
 
       expect(instance.getCached().engineProfile).to.eql({
-        executionPlatform: 'Flowave Platform',
+        executionPlatform: 'Fluxnova Platform',
         executionPlatformVersion: '1.0.0'
       });
 
       // when
       const schema = instance.getCached().form.getSchema();
 
-      schema.executionPlatform = 'Flowave Platform';
+      schema.executionPlatform = 'Fluxnova Platform';
       schema.executionPlatformVersion = '1.1.0';
 
       instance.handleChanged();
 
       // then
       expect(instance.getCached().engineProfile).to.eql({
-        executionPlatform: 'Flowave Platform',
+        executionPlatform: 'Fluxnova Platform',
         executionPlatformVersion: '1.1.0'
       });
     });
 
 
-    it('should open unknown execution profile form as Flowave Platform', async function() {
+    it('should open unknown execution profile form as Fluxnova Platform', async function() {
 
       // given
       const onImportSpy = spy();
@@ -731,7 +731,7 @@ describe('<FormEditor>', function() {
       expect(onImportSpy).to.have.been.calledOnce;
 
       expect(instance.getCached().engineProfile).to.eql({
-        executionPlatform: 'Flowave Platform',
+        executionPlatform: 'Fluxnova Platform',
         executionPlatformVersion: latestStable
       });
     });
@@ -1322,11 +1322,11 @@ describe('<FormEditor>', function() {
 
   });
 
-  describe('flowave conversion', function() {
+  describe('fluxnova conversion', function() {
 
     describe('should convert', function() {
 
-      it('existing form to flowave', async function() {
+      it('existing form to fluxnova', async function() {
 
         // given
         const onAction = sinon.stub().resolves({
@@ -1349,7 +1349,7 @@ describe('<FormEditor>', function() {
 
         const schema = form.getSchema();
 
-        expect(schema.executionPlatform).to.be.eql('Flowave Platform');
+        expect(schema.executionPlatform).to.be.eql('Fluxnova Platform');
         expect(schema.executionPlatformVersion).to.be.eql(latestStable);
 
       });
@@ -1358,7 +1358,7 @@ describe('<FormEditor>', function() {
 
     describe('should not convert', function() {
 
-      it('when model is already flowave', async function() {
+      it('when model is already fluxnova', async function() {
 
         //  given
         const onAction = spy();

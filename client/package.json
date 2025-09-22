@@ -1,7 +1,7 @@
 {
-  "name": "flowave-modeler-client",
+  "name": "fluxnova-modeler-client",
   "version": "0.0.1-dev",
-  "description": "Flowave Modeler client application",
+  "description": "Fluxnova Modeler client application",
   "private": true,
   "license": "MIT",
   "main": "src/index.js",

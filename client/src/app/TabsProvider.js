@@ -63,18 +63,18 @@ import { getDefaultVersion } from './tabs/EngineProfile';
 const BPMN_HELP_MENU = [
   {
     label: 'BPMN 2.0 Tutorial',
-    action: 'https://flowave.finos.org/bpmn/'
+    action: 'https://fluxnova.finos.org/bpmn/'
   },
   {
     label: 'BPMN Modeling Reference',
-    action: 'https://flowave.finos.org/bpmn/reference/'
+    action: 'https://fluxnova.finos.org/bpmn/reference/'
   }
 ];
 
 const DMN_HELP_MENU = [
   {
     label: 'DMN Tutorial',
-    action: 'https://flowave.finos.org/dmn/'
+    action: 'https://fluxnova.finos.org/dmn/'
   }
 ];
 
@@ -164,7 +164,7 @@ export default class TabsProvider {
         getNewFileMenu() {
           return [ {
             label: 'BPMN diagram',
-            group: 'Flowave',
+            group: 'Fluxnova',
             action: 'create-bpmn-diagram'
           } ];
         },
@@ -214,7 +214,7 @@ export default class TabsProvider {
         getNewFileMenu() {
           return [ {
             label: 'DMN diagram',
-            group: 'Flowave',
+            group: 'Fluxnova',
             action: 'create-dmn-diagram'
           } ];
         },
@@ -248,7 +248,7 @@ export default class TabsProvider {
         getNewFileMenu() {
           return [ {
             label: 'Form',
-            group: 'Flowave',
+            group: 'Fluxnova',
             action: 'create-form'
           } ];
         },
@@ -519,12 +519,12 @@ function replaceVersions(contents) {
 
   const platformVersion = getDefaultVersion(ENGINES.PLATFORM);
   const cloudVersion = getDefaultVersion(ENGINES.CLOUD);
-  const flowaveVersion = getDefaultVersion(ENGINES.FLOWAVE);
+  const fluxnovaVersion = getDefaultVersion(ENGINES.FLUXNOVA);
 
   return (
     contents
       .replace('{{ CAMUNDA_PLATFORM_VERSION }}', platformVersion)
-      .replace('{{ FLOWAVE_PLATFORM_VERSION }}', flowaveVersion)
+      .replace('{{ FLUXNOVA_PLATFORM_VERSION }}', fluxnovaVersion)
       .replace('{{ CAMUNDA_CLOUD_VERSION }}', cloudVersion)
   );
 }

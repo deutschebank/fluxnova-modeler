@@ -55,7 +55,7 @@ import {
   DEFAULT_LAYOUT
 } from '../OverviewContainer';
 
-import existingFlowaveXML from './existing.flowave.dmn';
+import existingFluxnovaXML from './existing.fluxnova.dmn';
 import existingC7XML from './existing.c7.dmn';
 import existingC8XML from '../../__tests__/EngineProfile.cloud.dmn';
 import { ENGINES, getLatestStable } from '../../../../util/Engines';
@@ -2122,7 +2122,7 @@ describe('<DmnEditor>', function() {
 
   });
 
-  describe('flowave conversion', function() {
+  describe('fluxnova conversion', function() {
 
     let onAction;
 
@@ -2136,11 +2136,11 @@ describe('<DmnEditor>', function() {
 
     describe('should convert', function() {
 
-      it('existing model to flowave', async function() {
+      it('existing model to fluxnova', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
-        const latestStable = getLatestStable(ENGINES.FLOWAVE);
+        const latestStable = getLatestStable(ENGINES.FLUXNOVA);
 
         // when
         await renderEditor(existingC7XML, {
@@ -2152,8 +2152,8 @@ describe('<DmnEditor>', function() {
         // then
         expect(onContentUpdated).to.be.calledOnce;
         const convertedXML = onContentUpdated.getCall(0).args[0];
-        expect(convertedXML).to.contain('namespace="http://flowave.finos.org/schema/1.0/dmn"');
-        expect(convertedXML).to.contain('modeler:executionPlatform="Flowave Platform"');
+        expect(convertedXML).to.contain('namespace="http://fluxnova.finos.org/schema/1.0/dmn"');
+        expect(convertedXML).to.contain('modeler:executionPlatform="Fluxnova Platform"');
         expect(convertedXML).to.contain(`modeler:executionPlatformVersion="${latestStable}"`);
 
         expect(convertedXML).not.to.contain('namespace="http://camunda.org/schema/1.0/dmn"');
@@ -2165,13 +2165,13 @@ describe('<DmnEditor>', function() {
 
     describe('should not convert', function() {
 
-      it('when model is already flowave', async function() {
+      it('when model is already fluxnova', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
 
         // when
-        await renderEditor(existingFlowaveXML, {
+        await renderEditor(existingFluxnovaXML, {
           onAction: onAction,
           onContentUpdated: onContentUpdated
         });
@@ -2245,36 +2245,36 @@ describe('<DmnEditor>', function() {
 
 
     it('should show engine profile (no engine profile)', expectEngineProfile(noEngineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: undefined
     }));
 
 
     it('should show engine profile (with namespace)', expectEngineProfile(namespaceEngineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: undefined
     }));
 
 
-    it('should show engine profile (Flowave 1.0.0)', expectEngineProfile(engineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+    it('should show engine profile (Fluxnova 1.0.0)', expectEngineProfile(engineProfileXML, {
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Flowave 1.0)', expectEngineProfile(missingPatchEngineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+    it('should show engine profile (Fluxnova 1.0)', expectEngineProfile(missingPatchEngineProfileXML, {
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Flowave 1.0.1)', expectEngineProfile(patchEngineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+    it('should show engine profile (Fluxnova 1.0.1)', expectEngineProfile(patchEngineProfileXML, {
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: '1.0.1'
     }));
 
 
-    it('should open unknown engine profile as Flowave', async function() {
+    it('should open unknown engine profile as Fluxnova', async function() {
 
       // given
       const onImportSpy = spy();
@@ -2286,7 +2286,7 @@ describe('<DmnEditor>', function() {
       expect(onImportSpy).to.have.been.calledOnce;
 
       expect(instance.getCached().engineProfile).to.eql({
-        executionPlatform: 'Flowave Platform',
+        executionPlatform: 'Fluxnova Platform',
         executionPlatformVersion: '7.15.0'
       });
     });

@@ -181,7 +181,7 @@ describe('<EngineProfile>', function() {
         [ ENGINES.CLOUD, '8.100', '8.100 (alpha)' ],
         [ ENGINES.PLATFORM, '7.14', '7.14' ],
         [ ENGINES.PLATFORM, '7.500', '7.500 (alpha)' ],
-        [ ENGINES.FLOWAVE, '0.0', '0.0' ],
+        [ ENGINES.FLUXNOVA, '0.0', '0.0' ],
         [ undefined, '10.0', '10.0' ],
       ];
 
@@ -200,9 +200,9 @@ describe('<EngineProfile>', function() {
 
       // given
       const inputs =
-      [ [ ENGINES.FLOWAVE, '7.23.0', 'Flowave 7.23 (unsupported)' ],
-        [ ENGINES.FLOWAVE, '0.0.1', 'Flowave 0.0' ],
-        [ ENGINES.FLOWAVE, '', 'Flowave' ]
+      [ [ ENGINES.FLUXNOVA, '7.23.0', 'Fluxnova 7.23 (unsupported)' ],
+        [ ENGINES.FLUXNOVA, '0.0.1', 'Fluxnova 0.0' ],
+        [ ENGINES.FLUXNOVA, '', 'Fluxnova' ]
       ];
 
       // then
@@ -231,7 +231,7 @@ describe('<EngineProfile>', function() {
       wrapper.find('button').simulate('click');
 
       // then
-      // todo: Uncomment once documentation available (https://github.com/finos/flowave-modeler/issues/8)
+      // todo: Uncomment once documentation available (https://github.com/finos/fluxnova-modeler/issues/8)
       // expectPlatformHelp(wrapper);
     });
 
@@ -248,7 +248,7 @@ describe('<EngineProfile>', function() {
       wrapper.find('button').simulate('click');
 
       // then
-      // todo: Uncomment once documentation available (https://github.com/finos/flowave-modeler/issues/8)
+      // todo: Uncomment once documentation available (https://github.com/finos/fluxnova-modeler/issues/8)
       // expectPlatformHelp(wrapper);
     });
 
@@ -303,7 +303,7 @@ describe('<EngineProfile>', function() {
       wrapper.find('button').simulate('click');
 
       // then
-      // todo: Uncomment once documentation available (https://github.com/finos/flowave-modeler/issues/8)
+      // todo: Uncomment once documentation available (https://github.com/finos/fluxnova-modeler/issues/8)
       // expectPlatformHelp(wrapper);
     });
 
@@ -320,7 +320,7 @@ describe('<EngineProfile>', function() {
       wrapper.find('button').simulate('click');
 
       // then
-      // todo: Uncomment once documentation available (https://github.com/finos/flowave-modeler/issues/8)
+      // todo: Uncomment once documentation available (https://github.com/finos/fluxnova-modeler/issues/8)
       // expectPlatformHelp(wrapper);
     });
 
@@ -374,7 +374,7 @@ describe('<EngineProfile>', function() {
       wrapper.find('button').simulate('click');
 
       // then
-      // todo: Uncomment once documentation available (https://github.com/finos/flowave-modeler/issues/8)
+      // todo: Uncomment once documentation available (https://github.com/finos/fluxnova-modeler/issues/8)
       // expectPlatformHelp(wrapper);
     });
 
@@ -391,7 +391,7 @@ describe('<EngineProfile>', function() {
       wrapper.find('button').simulate('click');
 
       // then
-      // todo: Uncomment once documentation available (https://github.com/finos/flowave-modeler/issues/8)
+      // todo: Uncomment once documentation available (https://github.com/finos/fluxnova-modeler/issues/8)
       // expectPlatformHelp(wrapper);
     });
 
@@ -446,9 +446,9 @@ function expectCloudHelp(wrapper) {
   expectHelpText(wrapper, 'https://docs.camunda.io/?utm_source=modeler&utm_medium=referral');
 }
 
-// todo: Uncomment once documentation available (https://github.com/finos/flowave-modeler/issues/8)
+// todo: Uncomment once documentation available (https://github.com/finos/fluxnova-modeler/issues/8)
 // function expectPlatformHelp(wrapper) {
-//   expectHelpText(wrapper, 'https://docs.flowave.finos.org/manual/latest/');
+//   expectHelpText(wrapper, 'https://docs.fluxnova.finos.org/manual/latest/');
 // }
 
 function selectVersion(wrapper, version) {

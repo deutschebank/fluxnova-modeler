@@ -18,7 +18,7 @@ const DmnTab = createTab('DmnTab', [
   {
     type: 'dmn',
     editor: DmnEditor,
-    defaultName: 'Diagram (Flowave Platform)'
+    defaultName: 'Diagram (Fluxnova Platform)'
   },
   {
     type: 'xml',
