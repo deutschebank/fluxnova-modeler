@@ -1,6 +1,6 @@
 {
   "name": "fluxnova-modeler",
-  "version": "0.0.1-dev",
+  "version": "0.0.1",
   "description": "Fluxnova Modeler for BPMN, DMN and CMMN, based on bpmn.io",
   "private": true,
   "main": "prod.js",

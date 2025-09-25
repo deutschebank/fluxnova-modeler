@@ -1,6 +1,6 @@
 {
   "name": "fluxnova-modeler-client",
-  "version": "0.0.1-dev",
+  "version": "0.0.1",
   "description": "Fluxnova Modeler client application",
   "private": true,
   "license": "MIT",

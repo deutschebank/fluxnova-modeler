@@ -20,6 +20,7 @@
     "dev": "npm run preload:build && run-p \"app:dev -- {@}\" client:dev --",
     "format": "run-s format:markdown 'lint -- --fix'",
     "format:markdown": "remark . -qo --ignore-pattern dist",
+    "get-version": "node app/util/get-version.js",
     "build:distro": "node tasks/distro.js",
     "build:test-distro": "node tasks/test-distro.js",
     "build": "run-s preload:build client:build \"build:distro -- {@}\" \"build:test-distro -- {@}\" --",
