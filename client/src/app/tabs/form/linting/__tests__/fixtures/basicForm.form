@@ -2,7 +2,7 @@
   "type": "default",
   "id": "formtest",
   "exporter": {
-    "name": "Flowave Modeler",
+    "name": "Fluxnova Modeler",
     "version": "5.34.0"
   },
   "components": [
@@ -39,6 +39,6 @@
       "id": "Field_1oef7xr"
     }
   ],
-  "executionPlatform": "Flowave Platform",
+  "executionPlatform": "Fluxnova Platform",
   "executionPlatformVersion": "1.0"
 }

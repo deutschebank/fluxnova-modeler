@@ -61,13 +61,13 @@ import {
 
 import { getPlatformTemplates } from '../../../util/elementTemplates';
 import {
-  convertBpmnToFlowaveIfRequired,
-} from '../util/flowaveConversion';
+  convertBpmnToFluxnovaIfRequired,
+} from '../util/fluxnovaConversion';
 
 const EXPORT_AS = [ 'png', 'jpeg', 'svg' ];
 
 export const DEFAULT_ENGINE_PROFILE = {
-  executionPlatform: ENGINES.FLOWAVE
+  executionPlatform: ENGINES.FLUXNOVA
 };
 
 const LOW_PRIORITY = 500;
@@ -549,7 +549,7 @@ export class BpmnEditor extends CachedComponent {
         onAction
       } = this.props;
 
-      importedXML = await convertBpmnToFlowaveIfRequired(importedXML, onAction, onContentUpdated);
+      importedXML = await convertBpmnToFluxnovaIfRequired(importedXML, onAction, onContentUpdated);
 
       const result = await modeler.importXML(importedXML);
       warnings = result.warnings;

@@ -10,7 +10,6 @@
 
 import React, { PureComponent } from 'react';
 
-import CloudIcon from '../../resources/icons/Cloud.svg';
 import PlatformIcon from '../../resources/icons/Platform.svg';
 
 import * as css from './EmptyTab.less';
@@ -61,14 +60,14 @@ export default class EmptyTab extends PureComponent {
 
   renderPlatformColumn = () => {
 
-    const createButtons = this.getCreateButtons('Flowave');
+    const createButtons = this.getCreateButtons('Fluxnova');
 
     return (
       <div id="welcome-page-platform" className="welcome-card">
         <div className="engine-info">
           <div className="engine-info-heading">
             <PlatformIcon className="engine-icon platform-icon" />
-            <h3>Flowave</h3>
+            <h3>Fluxnova</h3>
           </div>
         </div>
 
@@ -86,12 +85,12 @@ export default class EmptyTab extends PureComponent {
         <div className="learn-more">
           <h3>Learn more</h3>
           <div className="article relative">
-            <p>Introduction to Flowave</p>
-            <a href="https://docs.flowave.finos.org/get-started/quick-start">Getting Started</a>
+            <p>Introduction to Fluxnova</p>
+            <a href="https://docs.fluxnova.finos.org/get-started/quick-start">Getting Started</a>
           </div>
           <div className="article relative">
             <p>Migrating from Camunda 7</p>
-            <a href="https://docs.flowave.finos.org/modeler">Flowave Modeler Docs</a>
+            <a href="https://docs.fluxnova.finos.org/modeler">Fluxnova Modeler Docs</a>
           </div>
           <div className="article">
             <p>About Modeler 1</p>
@@ -99,7 +98,7 @@ export default class EmptyTab extends PureComponent {
           </div>
           <div className="article">
             <p>Model your first diagram</p>
-            <a href="https://docs.flowave.finos.org/">Flowave Docs</a>
+            <a href="https://docs.fluxnova.finos.org/">Fluxnova Docs</a>
           </div>
         </div>
       </div>

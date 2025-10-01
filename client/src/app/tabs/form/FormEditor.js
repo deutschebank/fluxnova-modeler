@@ -44,12 +44,12 @@ import EngineProfileHelper from '../EngineProfileHelper';
 import { ENGINES } from '../../../util/Engines';
 
 import { FormPreviewToggle } from './FormPreviewToggle';
-import { convertFormToFlowaveIfRequired } from '../util/flowaveConversion';
+import { convertFormToFluxnovaIfRequired } from '../util/fluxnovaConversion';
 
 const LOW_PRIORITY = 500;
 
 export const DEFAULT_ENGINE_PROFILE = {
-  executionPlatform: ENGINES.FLOWAVE
+  executionPlatform: ENGINES.FLUXNOVA
 };
 
 const FORM_LAYOUT_KEY = 'formEditor';
@@ -194,7 +194,7 @@ export class FormEditor extends CachedComponent {
 
     try {
       schemaJSON = JSON.parse(schema);
-      schemaJSON = await convertFormToFlowaveIfRequired(schemaJSON, this.props.onAction);
+      schemaJSON = await convertFormToFluxnovaIfRequired(schemaJSON, this.props.onAction);
 
       /*
        * Note @pinussilvestrus:

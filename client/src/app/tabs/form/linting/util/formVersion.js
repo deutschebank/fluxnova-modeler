@@ -1,7 +1,7 @@
 import { toSemverMinor } from './helpers';
 
 export const formJSVersions = {
-  'Flowave Platform': {
+  'Fluxnova Platform': {
     '1.0': '1.14.0'
   }
 };

@@ -34,7 +34,7 @@ import diagramXML from './diagram.bpmn';
 import existingVanillaXML from './existing.vanilla.bpmn';
 import existingC7XML from './existing.c7.bpmn';
 import existingC8XML from './existing.c8.bpmn';
-import existingFlowaveModel from './existing.flowave.bpmn';
+import existingFluxnovaModel from './existing.fluxnova.bpmn';
 import engineProfileXML from '../../__tests__/EngineProfile.platform.bpmn';
 import noEngineProfileXML from '../../__tests__/EngineProfile.vanilla.bpmn';
 import unknownEngineProfileXML from '../../__tests__/EngineProfile.unknown.bpmn';
@@ -842,13 +842,13 @@ describe('<BpmnEditor>', function() {
   });
 
 
-  describe('flowave conversion', function() {
+  describe('fluxnova conversion', function() {
 
     describe('should convert', function() {
 
-      const latestStable = getLatestStable(ENGINES.FLOWAVE);
+      const latestStable = getLatestStable(ENGINES.FLUXNOVA);
 
-      it('existing model to flowave', async function() {
+      it('existing model to fluxnova', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
@@ -862,9 +862,9 @@ describe('<BpmnEditor>', function() {
         expect(onContentUpdated).to.be.calledOnce;
 
         const convertedXML = onContentUpdated.getCall(0).args[0];
-        expect(convertedXML).to.contain('xmlns:modeler="http://flowave.finos.org/schema/modeler/1.0"');
-        expect(convertedXML).to.contain('xmlns:flowave="http://flowave.finos.org/schema/1.0/bpmn"');
-        expect(convertedXML).to.contain('modeler:executionPlatform="Flowave Platform"');
+        expect(convertedXML).to.contain('xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0"');
+        expect(convertedXML).to.contain('xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn"');
+        expect(convertedXML).to.contain('modeler:executionPlatform="Fluxnova Platform"');
         expect(convertedXML).to.contain(`modeler:executionPlatformVersion="${latestStable}`);
 
         expect(convertedXML).not.to.contain('xmlns:modeler="http://camunda.org/schema/modeler/1.0"');
@@ -872,7 +872,7 @@ describe('<BpmnEditor>', function() {
 
       });
 
-      it('existing model that uses camunda extended attributes to flowave', async function() {
+      it('existing model that uses camunda extended attributes to fluxnova', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
@@ -885,9 +885,9 @@ describe('<BpmnEditor>', function() {
         // then
         expect(onContentUpdated).to.be.calledOnce;
         const convertedXML = onContentUpdated.getCall(0).args[0];
-        expect(convertedXML).to.contain('xmlns:modeler="http://flowave.finos.org/schema/modeler/1.0"');
-        expect(convertedXML).to.contain('xmlns:flowave="http://flowave.finos.org/schema/1.0/bpmn"');
-        expect(convertedXML).to.contain('modeler:executionPlatform="Flowave Platform"');
+        expect(convertedXML).to.contain('xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0"');
+        expect(convertedXML).to.contain('xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn"');
+        expect(convertedXML).to.contain('modeler:executionPlatform="Fluxnova Platform"');
         expect(convertedXML).to.contain(`modeler:executionPlatformVersion="${latestStable}`);
         expect(convertedXML).to.contain('xmlns:camunda="http://camunda.org/schema/1.0/bpmn"');
 
@@ -899,13 +899,13 @@ describe('<BpmnEditor>', function() {
 
     describe('should not convert', function() {
 
-      it('when model is already flowave', async function() {
+      it('when model is already fluxnova', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
 
         // when
-        await renderEditor(existingFlowaveModel, {
+        await renderEditor(existingFluxnovaModel, {
           onContentUpdated
         }, onAction);
 
@@ -2050,36 +2050,36 @@ describe('<BpmnEditor>', function() {
 
 
     it('should show engine profile (no engine profile)', expectEngineProfile(noEngineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: undefined
     }));
 
 
     it('should show engine profile (with namespace)', expectEngineProfile(namespaceEngineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: undefined
     }));
 
 
     it('should show engine profile (Camunda 7.16.0)', expectEngineProfile(engineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Flowave 1.0)', expectEngineProfile(missingPatchEngineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+    it('should show engine profile (Fluxnova 1.0)', expectEngineProfile(missingPatchEngineProfileXML, {
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Flowave 1.0.1)', expectEngineProfile(patchEngineProfileXML, {
-      executionPlatform: 'Flowave Platform',
+    it('should show engine profile (Fluxnova 1.0.1)', expectEngineProfile(patchEngineProfileXML, {
+      executionPlatform: 'Fluxnova Platform',
       executionPlatformVersion: '1.0.1'
     }));
 
 
-    it('should open as Flowave Platform if unknown execution profile', async function() {
+    it('should open as Fluxnova Platform if unknown execution profile', async function() {
 
       // given
       const onImportSpy = spy();
@@ -2092,7 +2092,7 @@ describe('<BpmnEditor>', function() {
       // then
       expect(onImportSpy).to.have.been.calledOnce;
       expect(instance.getCached().engineProfile).to.be.eql({
-        executionPlatform: 'Flowave Platform',
+        executionPlatform: 'Fluxnova Platform',
         executionPlatformVersion: '7.15.0',
       });
     });

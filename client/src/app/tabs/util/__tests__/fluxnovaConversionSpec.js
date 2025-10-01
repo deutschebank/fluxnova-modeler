@@ -1,13 +1,13 @@
 /* global sinon */
 
 import {
-  convertBpmnToFlowaveIfRequired,
-  convertDmnToFlowaveIfRequired, convertFormToFlowaveIfRequired,
-} from '../flowaveConversion';
+  convertBpmnToFluxnovaIfRequired,
+  convertDmnToFluxnovaIfRequired, convertFormToFluxnovaIfRequired,
+} from '../fluxnovaConversion';
 import { spy } from 'sinon';
 import { ENGINES, getLatestStable } from '../../../../util/Engines';
 
-describe('tabs/bpmn/util - flowaveConversion', function() {
+describe('tabs/bpmn/util - fluxnovaConversion', function() {
 
   const camundaNsBpmn = `
     <?xml version="1.0" encoding="UTF-8"?>
@@ -41,9 +41,9 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
     </bpmn:definitions>
   `;
 
-  const flowaveBpmn = `
+  const fluxnovaBpmn = `
     <?xml version="1.0" encoding="UTF-8"?>
-    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:flowave="http://flowave.finos.org/schema/1.0/bpmn" id="Definitions_1ug79wa" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Flowave Modeler" exporterVersion="5.33.0-dev" xmlns:modeler="http://flowave.finos.org/schema/modeler/1.0" modeler:executionPlatform="Flowave Platform" modeler:executionPlatformVersion="1.0.0">
+    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn" id="Definitions_1ug79wa" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Fluxnova Modeler" exporterVersion="5.33.0-dev" xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0" modeler:executionPlatform="Fluxnova Platform" modeler:executionPlatformVersion="1.0.0">
         <bpmn:process id="Process_10ga7ii" isExecutable="true" >
         <bpmn:startEvent id="StartEvent_1" />
         </bpmn:process>
@@ -104,19 +104,19 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
     executionPlatformVersion: '1.0.0'
   };
 
-  const flowaveForm = {
+  const fluxnovaForm = {
     type: 'default',
     id: 'Form_0lvnpjd',
     exporter: {
-      name: 'Flowave Modeler',
+      name: 'Fluxnova Modeler',
       version: '5.33.0-dev'
     },
     components: [],
-    executionPlatform: 'Flowave Platform',
+    executionPlatform: 'Fluxnova Platform',
     executionPlatformVersion: '1.0.0'
   };
 
-  describe('convertBpmnToFlowaveIfRequired', function() {
+  describe('convertBpmnToFluxnovaIfRequired', function() {
 
     let onAction;
     let onContentChanged;
@@ -130,17 +130,17 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
 
     describe('should convert', function() {
 
-      const latestStable = getLatestStable(ENGINES.FLOWAVE);
+      const latestStable = getLatestStable(ENGINES.FLUXNOVA);
 
-      it('non flowave bpmn', async function() {
+      it('non fluxnova bpmn', async function() {
 
-        const conversion = await convertBpmnToFlowaveIfRequired(camundaNsBpmn, onAction, onContentChanged);
+        const conversion = await convertBpmnToFluxnovaIfRequired(camundaNsBpmn, onAction, onContentChanged);
 
         expect(onAction).to.have.been.calledWith('show-dialog');
 
-        expect(conversion).to.contain('xmlns:modeler="http://flowave.finos.org/schema/modeler/1.0"');
-        expect(conversion).to.contain('xmlns:flowave="http://flowave.finos.org/schema/1.0/bpmn"');
-        expect(conversion).to.contain('modeler:executionPlatform="Flowave Platform"');
+        expect(conversion).to.contain('xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0"');
+        expect(conversion).to.contain('xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn"');
+        expect(conversion).to.contain('modeler:executionPlatform="Fluxnova Platform"');
         expect(conversion).to.contain(`modeler:executionPlatformVersion="${latestStable}"`);
 
         expect(conversion).not.to.contain('xmlns:modeler="http://camunda.org/schema/modeler/1.0"');
@@ -151,14 +151,14 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
 
       });
 
-      it('non flowave dmn', async function() {
+      it('non fluxnova dmn', async function() {
 
-        const conversion = await convertDmnToFlowaveIfRequired(camundaDmn, onAction, onContentChanged);
+        const conversion = await convertDmnToFluxnovaIfRequired(camundaDmn, onAction, onContentChanged);
 
         expect(onAction).to.have.been.calledWith('show-dialog');
 
-        expect(conversion).to.contain('namespace="http://flowave.finos.org/schema/1.0/dmn"');
-        expect(conversion).to.contain('modeler:executionPlatform="Flowave Platform"');
+        expect(conversion).to.contain('namespace="http://fluxnova.finos.org/schema/1.0/dmn"');
+        expect(conversion).to.contain('modeler:executionPlatform="Fluxnova Platform"');
         expect(conversion).to.contain(`modeler:executionPlatformVersion="${latestStable}"`);
 
         expect(conversion).not.to.contain('namespace="http://camunda.org/schema/1.0/dmn"');
@@ -169,13 +169,13 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
 
       });
 
-      it('non flowave form', async function() {
+      it('non fluxnova form', async function() {
 
-        const conversion = await convertFormToFlowaveIfRequired(camundaForm, onAction);
+        const conversion = await convertFormToFluxnovaIfRequired(camundaForm, onAction);
 
         expect(onAction).to.have.been.calledWith('show-dialog');
 
-        expect(conversion.executionPlatform).to.be.eql('Flowave Platform');
+        expect(conversion.executionPlatform).to.be.eql('Fluxnova Platform');
         expect(conversion.executionPlatformVersion).to.be.eql(latestStable);
 
         expect(onAction).not.to.have.been.calledWith('close-tab');
@@ -195,7 +195,7 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
           button: '1'
         });
 
-        await convertBpmnToFlowaveIfRequired(camundaNsBpmn, onAction, onContentChanged);
+        await convertBpmnToFluxnovaIfRequired(camundaNsBpmn, onAction, onContentChanged);
 
         expect(onAction).to.have.been.calledWith('close-tab');
         expect(onContentChanged).not.to.have.been.called;
@@ -210,7 +210,7 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
           button: '2'
         });
 
-        await convertBpmnToFlowaveIfRequired(camunda8Bpmn, onAction, onContentChanged);
+        await convertBpmnToFluxnovaIfRequired(camunda8Bpmn, onAction, onContentChanged);
 
         expect(onAction).to.have.been.calledWith('close-tab');
         expect(onContentChanged).not.to.have.been.called;
@@ -223,16 +223,16 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
           button: '2'
         });
 
-        await convertFormToFlowaveIfRequired(camunda8Form, onAction);
+        await convertFormToFluxnovaIfRequired(camunda8Form, onAction);
 
         expect(onAction).to.have.been.calledWith('close-tab');
       });
 
-      it('when xml contains both flowave ns and exe platform', async function() {
+      it('when xml contains both fluxnova ns and exe platform', async function() {
 
         let onContentChanged = spy();
 
-        await convertBpmnToFlowaveIfRequired(flowaveBpmn, onAction, onContentChanged);
+        await convertBpmnToFluxnovaIfRequired(fluxnovaBpmn, onAction, onContentChanged);
 
         expect(onAction).not.to.have.been.calledWith('show-dialog');
         expect(onContentChanged).not.to.have.been.called;
@@ -243,16 +243,16 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
 
         let onContentChanged = spy();
 
-        await convertBpmnToFlowaveIfRequired('some-entity', onAction, onContentChanged);
+        await convertBpmnToFluxnovaIfRequired('some-entity', onAction, onContentChanged);
 
         expect(onAction).not.to.have.been.calledWith('show-dialog');
         expect(onContentChanged).not.to.have.been.called;
 
       });
 
-      it('when json contains both flowave ns and exe platform', async function() {
+      it('when json contains both fluxnova ns and exe platform', async function() {
 
-        await convertFormToFlowaveIfRequired(flowaveForm, onAction);
+        await convertFormToFluxnovaIfRequired(fluxnovaForm, onAction);
 
         expect(onAction).not.to.have.been.calledWith('show-dialog');
 
@@ -260,7 +260,7 @@ describe('tabs/bpmn/util - flowaveConversion', function() {
 
       it('when json entity invalid', async function() {
 
-        await convertFormToFlowaveIfRequired('some-entity', onAction);
+        await convertFormToFluxnovaIfRequired('some-entity', onAction);
 
         expect(onAction).not.to.have.been.calledWith('show-dialog');
       });

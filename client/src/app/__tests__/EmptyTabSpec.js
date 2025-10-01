@@ -17,7 +17,7 @@ import {
 import EmptyTab from '../EmptyTab';
 import TabsProvider from '../TabsProvider';
 
-import Flags, { DISABLE_DMN, DISABLE_FORM } from '../../util/Flags';
+import Flags, { DISABLE_DMN, DISABLE_FORM, DISABLE_PLATFORM } from '../../util/Flags';
 
 /* global sinon */
 
@@ -144,7 +144,7 @@ describe('<EmptyTab>', function() {
       expect(tree.find('.welcome-card')).to.have.length(2);
       expect(
         tree.findWhere(
-          wrapper => wrapper.text().startsWith('Flowave')
+          wrapper => wrapper.text().startsWith('Fluxnova')
         ).exists()
       ).to.be.true;
     });

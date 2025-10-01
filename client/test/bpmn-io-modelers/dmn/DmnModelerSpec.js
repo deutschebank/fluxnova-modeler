@@ -26,7 +26,6 @@ const DEFAULT_OPTIONS = {
   }
 };
 
-const OVERVIEW_ZOOM_SCALE = 0.66;
 
 const VERY_LOW_PRIORITY = 100;
 
@@ -237,8 +236,8 @@ describe('DmnModeler', function() {
     });
 
 
-   /* it('should set default zoom scale on import', function() {
-      const overviewCanvas = modeler._overview.getActiveViewer().get('canvas');
+    /* it('should set default zoom scale on import', function() {
+       const overviewCanvas = modeler._overview.getActiveViewer().get('canvas');
 
       // then
       expect(overviewCanvas.zoom()).to.equal(OVERVIEW_ZOOM_SCALE);
@@ -327,7 +326,7 @@ describe('DmnModeler', function() {
     });
 
 
-    /*it('should center viewbox', async function() {
+    /* it('should center viewbox', async function() {
 
       // given
       await openDecisionTable(modeler);
@@ -407,7 +406,7 @@ describe('DmnModeler', function() {
       // when
       const executionPlatformHelper = modeler.getActiveViewer().get('executionPlatform');
       executionPlatformHelper.setExecutionPlatform({
-        name: 'Flowave Platform',
+        name: 'Fluxnova Platform',
         version: '1.0.0'
       });
 
@@ -415,10 +414,10 @@ describe('DmnModeler', function() {
       const { xml } = await modeler.saveXML();
 
       expect(executionPlatformHelper.getExecutionPlatform()).to.eql({
-        name: 'Flowave Platform',
+        name: 'Fluxnova Platform',
         version: '1.0.0'
       });
-      expect(xml).to.contain('xmlns:modeler="http://flowave.finos.org/schema/modeler/1.0"');
+      expect(xml).to.contain('xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0"');
     });
   });
 

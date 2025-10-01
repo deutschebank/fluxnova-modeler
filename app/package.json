@@ -1,13 +1,13 @@
 {
-  "name": "flowave-modeler",
-  "version": "0.0.1-dev",
-  "description": "Flowave Modeler for BPMN, DMN and CMMN, based on bpmn.io",
+  "name": "fluxnova-modeler",
+  "version": "0.0.1",
+  "description": "Fluxnova Modeler for BPMN, DMN and CMMN, based on bpmn.io",
   "private": true,
   "main": "prod.js",
   "author": {
     "name": "FINOS",
-    "email": "flowave@lists.finos.org",
-    "url": "https://flowave.finos.org"
+    "email": "fluxnova@lists.finos.org",
+    "url": "https://fluxnova.finos.org"
   },
   "license": "MIT",
   "dependencies": {
@@ -21,10 +21,10 @@
     "mri": "^1.1.6",
     "parents": "^1.0.1"
   },
-  "homepage": "https://github.com/finos/flowave-modeler",
+  "homepage": "https://github.com/finos/fluxnova-modeler",
   "repository": {
     "type": "git",
-    "url": "https://github.com/finos/flowave-modeler"
+    "url": "https://github.com/finos/fluxnova-modeler"
   },
   "optionalDependencies": {
     "vscode-windows-ca-certs": "^0.3.0"
