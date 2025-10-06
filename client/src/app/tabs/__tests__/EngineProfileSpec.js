@@ -201,7 +201,7 @@ describe('<EngineProfile>', function() {
       // given
       const inputs =
       [ [ ENGINES.FLUXNOVA, '7.23.0', 'Fluxnova 7.23 (unsupported)' ],
-        [ ENGINES.FLUXNOVA, '0.0.1', 'Fluxnova 0.0' ],
+        [ ENGINES.FLUXNOVA, '1.0.0', 'Fluxnova 1.0' ],
         [ ENGINES.FLUXNOVA, '', 'Fluxnova' ]
       ];
 
