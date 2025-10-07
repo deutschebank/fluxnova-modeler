@@ -1,21 +1,18 @@
 [![FINOS - Forming](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-forming.svg)](https://community.finos.org/docs/governance/Software-Projects/project-lifecycle)
 
-# Camunda Modeler
+# Fluxnova Modeler
 
 
-[![CI](https://github.com/camunda/camunda-modeler/actions/workflows/CI.yml/badge.svg)](https://github.com/camunda/camunda-modeler/actions/workflows/CI.yml)
+[![CI](https://github.com/finos/fluxnova-modeler/actions/workflows/CI.yml/badge.svg)](https://github.com/finos/fluxnova-modeler/actions/workflows/CI.yml)
 
 An integrated modeling solution for BPMN, DMN, and Forms based on [bpmn.io](http://bpmn.io).
 
-![Camunda Modeler](resources/screenshot.png)
+![Fluxnova Modeler](resources/screenshot.png)
 
 ## Resources
 
 * [Changelog](./CHANGELOG.md)
-* [Download](https://camunda.com/download/modeler/) (see also [nightly builds](https://downloads.camunda.cloud/release/camunda-modeler/nightly/))
-* [Give Feedback](https://forum.camunda.io/c/modeler/)
-* [Report a Bug](https://github.com/camunda/camunda-modeler/issues)
-* [User Documentation](https://docs.camunda.io/docs/components/modeler/desktop-modeler/)
+* [Report a Bug](https://github.com/finos/fluxnova-modeler/issues)
 
 ## Building the Application
 
