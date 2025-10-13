@@ -41,6 +41,11 @@ Spin up the application for development, all strings attached:
 npm run dev
 ```
 
+### Development Setup
+Please checkout our [troubleshooting guide](./TROUBLESHOOTING.md) if you are experiencing issues when building from source.
+
+
+
 ## Contributing
 
 Please checkout our [contributing guidelines](./CONTRIBUTING.md) if you plan to file an issue or pull request.
