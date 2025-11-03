@@ -17,8 +17,7 @@
  * @return {string} actual app version
  */
 function getVersion() {
-  const pkg = require('../package.json');
-  const baseVersion = pkg.version;
+  const baseVersion = require('../package.json').version.split('-')[0];
 
   const IS_CI = !!process.env.IS_CI;
   const IS_NIGHTLY = !!process.env.NIGHTLY;
